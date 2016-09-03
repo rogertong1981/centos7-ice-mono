@@ -2,7 +2,7 @@ FROM centos:latest
 MAINTAINER isuper@qq.com
 RUN yum -y update && \
 	yum install -y wget yum-utils && \
-	echo "Asia/shanghai" > /etc/timezone && \
+	cat /usr/share/zoneinfo/Asia/Shanghai > /etc/localtime && \
 	cd /etc/yum.repos.d && \
 	wget https://zeroc.com/download/rpm/zeroc-ice-el7.repo && \
 	rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" && \
